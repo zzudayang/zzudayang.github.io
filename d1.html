@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>pr教程</title>
+		<link rel="stylesheet" href="d1.css">
+		<!-- 鼠标点击特效 -->
+		 <style type="text/css">      
+		        * {
+		            cursor: url('picture/z3.png'), auto;
+		        }
+		 </style>
+		 <script src="js/cursor-effects.js" defer></script>
+	</head>
+	<body>
+		<!-- Header -->
+			<header id="header">
+				<a class="logo"><strong>计算机技术展</strong></a>
+				<nav>
+					<a href="#menu">菜单栏</a>
+				</nav>
+			</header>
+		
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="index.html">主页</a></li>
+				<li class="father-list">
+					<div class="child-box b-one">
+						<div class="btn" style="cursor: default">名人轶事</div>
+						<img class="pho" src="picture/a8.png" alt="">
+					</div>
+					<ul class="child-list l-one" style="display: none">
+						<li><a href="b1.html" style="color: #fff;">冯诺依曼</a></li>
+						<li><a href="b2.html" style="color: #fff;">图灵</a></li>
+					</ul>
+				</li>
+				<li><a href="c1.html">前端之美</a></li>
+				<li class="father-list">
+					<div class="child-box b-two">
+						<div class="btn" style="cursor: default">软件介绍</div>
+						<img class="pho" src="picture/a8.png" alt="">
+					</div>
+					<ul class="child-list l-two" style="display: none">
+						<li><a href="d3.html" style="color: #fff;">QQ</a></li>
+						<li><a href="d2.html" style="color: #fff;">PS</a></li>
+						<li><a href="d1.html" style="color: #fff;">PR</a></li>
+					</ul>
+				</li>
+				<li><a href="e1.html">人工智能</a></li>
+				<li><a href="f1.html">云计算</a></li>
+				<li><a href="g1.html">网络安全</a></li>
+			</ul>
+		</nav>
+			
+			<!-- Article -->
+			<article>
+				<div id="flex">
+					<img src="picture/pricon.png" id="headimg" >
+					<p id="head">Adobe Premiere Pro</p>
+				</div>
+				
+				<div class="box1">
+					<h1>Adobe Premiere Pro介绍</h1>
+					<h3>1.简介</h3>
+					<p>
+					Adobe Premiere Pro，简称Pr，是由Adobe公司开发的一款视频编辑软件。<br>
+					常用的版本有CS4、CS5、CS6、CC 2014、CC 2015、CC 2017、CC 2018、CC 2019、CC2020、CC2021以及2022版本。<br>
+					Adobe Premiere有较好的兼容性，且可以与Adobe公司推出的其他软件相互协作。这款软件广泛应用于广告制作和电视节目制作中。<br>
+					</p>
+					<h3>2.pr和其他剪辑软件相比好在哪里？</h3>
+					<p>
+						Pr是专业级的剪辑软件，具有灵活性与协作性强的特点，提供了采集、剪辑、调色、美化音频、字幕添加、输出、DVD刻录的一整套流程。<br>
+						并可以和其他Adobe软件(如ps、au、ae)高效集成，足以完成在编辑、制作、工作流上遇到的所有挑战，但学习的难度也比较大。<br>
+					</p>
+					
+				</div>
+				
+				<div class="box2">
+					<h1>Adobe Premiere Pro简明教程</h1>
+					<h3>1.认识pr界面</h3>
+					<p>
+						<img src="picture/printerface.png" alt="" class="img1"><br>
+						如图，打开pr后，首先是项目界面，<strong>一个项目就是一个视频工程</strong>。如果第一次使用的话，点击“新建项目”，如果已经有了项目，想要继续制作视频的话，直接点击右边的项目即可。<br><br>
+						如果右边没有显示自己的项目，也可以在本地文件中打开自己曾经的项目。<br>
+						<img src="picture/printerface2.png" alt="" class="img1"><br>
+						打开项目后，如图，整个pr大致分为了这几个板块，它们分别有不同的作用，它们的功能下面会详细讲解。
+					</p>
+					<h3>2.导入素材</h3>
+					<p>
+						<img src="picture/daoru.png" alt="" class="img2"><br>
+						在素材栏中单击右键，选择导入素材，可以从本地导入图片、视频或声音素材，也可以导入ps专用的psd格式等。<br><br>
+						<img src="picture/finishdaoru.png" alt="" class="img2"><br>
+						如图，导入完成，为下一步剪辑做准备。
+					</p>
+					<h3>3.简单剪辑</h3>
+					<p>
+						<img src="picture/jianji1.png" alt="" class="img1"><br>
+						用鼠标把素材拖到时间轴上，可以看到时间轴上出现了素材，其中V1，V2，V3……是图像轨道，A1，A2，A3……是声音轨道。<br>
+						如果素材是图片，则只会占用图像轨道，并且每个图片默认时长是5s，如果素材是声音，则只会占用音频轨道，如果素材是视频，<br>
+						则两个轨道都会占用。在图像轨道中，位于上面的轨道的图像会覆盖掉下面轨道的图像。<br>
+						<img src="picture/jianji2.jpg" alt="" class="img1"><br>
+						如图，可以拖动时间轴的指针到不同的画面查看效果，在预览画面中会显示。当然也可以拖动预览画面中的指针，达到同样的效果。<br><br>
+						点击某个素材，可以选中该素材，拖动该素材的最左端或最右端，可以进行素材的裁剪。
+						<img src="picture/jianji4.png" alt="" class="img1"><br>
+						如图，可以使用剪刀工具（快捷键C），点击后可以在素材上裁剪。
+					</p>
+					<h3>4.处理视频/声音</h4>
+					<p>
+						导入一段视频，把它拖到时间轴上，画面和音频会默认绑定，点击右键，会出现许多选项，如下图所示。<br>
+						<img src="picture/spyp.jpg" alt="" class="img1"><br>
+						<strong>其中比较常用的几个按钮：</strong><br>
+						取消链接：指把画面和音频的绑定给取消，拖动画面时不会再影响音频，二者可以单独拖动<br>
+						速度/持续时间：点击后可以更改视频或音频播放的速度，或指定一段素材的持续时间进行变速，也可以选择倒放。<br>
+						音频增益：可以调大或者缩小音频的音量。<br>
+						缩放为帧大小：当画面在预览栏里面大小不对时可以点击此选项迅速自动调整画面的大小<br>
+					</p>
+					<h3>5.关键帧和动画</h3>
+					<p>
+						<img src="picture/dh1.jpg" alt="" class="img1"><br>
+						选中一段素材，如图，在左上角点击“效果控件”按钮，可以调整画面的位置、缩放大小以及不透明度等。<br>
+						<img src="picture/dh2.png" alt="" class="img2"><br>
+						如图，点击像钟表一样的图标，可以为素材的某个属性添加关键帧，之后关键帧处于开启状态，当在时间轴的不同位置再次调整这个熟悉时，
+						该属性的值会随着时间轴的移动以线性函数方式改变。从而实现动画的效果。
+					</p>
+					<h3>6.绿幕抠像</h3>
+						<p>
+							<img src="picture/green1.png" alt="" class="img2"><br>
+							首先需要导入一个绿幕素材，如图所示。并将绿幕素材拖动到原先素材的轨道上方。
+							<img src="picture/green2.png" alt="" class="img2"><br>
+							在左下角的素材库中点击“效果”，输入“超级键”，将超级键拖入到绿幕素材上。
+							<img src="picture/green3.png" alt="" class="img1"><br>
+							点击左上角的“效果控件”，将滚轮向下拖，点击“主要颜色”右边的吸管，在预览画面的绿色部分点击一下即可吸取所有绿色部分，<br>
+							成功抠出绿幕画面的内容，可以将视频自然播放预览效果，绿幕抠像效果完成。
+							<img src="picture/green4.jpg" alt="" class="img1"><br>
+						</p>
+					<h3>7.导入预设，加入特效</h3>
+					<p>
+						pr还有许多更强大的功能，比如预设特效，字幕，视频转场，打点标记，序列和嵌套，以及配合插件使用等，由于篇幅原因，更多的内容需要自己去探索。<br>
+						这里简单提一下预设和特效，点击左下角的效果，选择预设，会看到许多效果，可以将它们一一拖到素材上面预览效果，也可以从外部直接导入预设。<br>
+						<img src="picture/yushe.png" alt="" class="img3">
+						<img src="picture/yushe2.png" alt="" class="img3"><br>
+					</p>
+					<h3>8.导出视频，制作完成</h3>
+					<p>
+						视频制作结束后，我们需要拿到自己辛苦做好的作品。<br>
+						<img src="picture/daochu1.jpg" class="img2"><br>
+						点击左上角 文件-导出-媒体，即可进入视频导出界面，可以进行一些设置，默认输出格式为H.264，导出后为mp4格式，输出名称即为视频的名称，点击名称可以选择导出的路径。<br>
+						<img src="picture/daochu2.png" class="img1"><br>
+						下面可以继续进行一些参数的设置，全部设置好后，点击导出按钮，在经过一定时间的等待后，视频即可导出到相应的位置，整个流程结束。
+					</p>
+				</div>
+				
+				<div class="box3">
+					<h1>Adobe Premiere Pro展示</h1>
+					<p>下面为一些用pr做出的效果：</p>
+					<input type="image" src="picture/texiao.jpg" / class="img4"><br>
+					<input type="image" src="https://pic2.zhimg.com/50/v2-e419f3a7785b4078949f96abe316cd33_720w.webp?source=1940ef5c" class="img4"/><br>
+					<input type="image" src="https://pic3.zhimg.com/50/v2-8c06f47dffebda78fdcdccb3cb30ce72_720w.webp?source=1940ef5c" class="img4"/><br>
+				</div>
+			
+				
+			</article>
+			<!-- Footer -->
+			<footer id="footer">
+			
+				<div class="copyright">
+					<a>网页设计大赛制作人员： </a>  徐一鸣，秦宇阳，钱苏杭，赵俊超，刘嘉
+				</div>
+			</footer>
+			<img class="top" src="http://document.youkeda.com/P3-1-HTML-CSS/1.8/top.png"/>
+			
+			<script>
+			    const topDom = document.querySelector('.top');
+			    topDom.addEventListener('click', function() {
+			        document.body.scrollTop = document.documentElement.scrollTop = 0;
+			    });
+			</script>
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/skel.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
+			<script src="js/catalog.js"></script>
+	</body>
+	<script type="text/javascript">
+		let showMore1 = false;
+		const more1 = document.querySelector(".links .b-one");
+		const moreDis1 = document.querySelector(".links .l-one");
+		more1.addEventListener("click", function () {
+			showMore1= !showMore1;
+			if(showMore1) {
+				moreDis1.style.display = "block";
+			} else {
+				moreDis1.style.display = "none";
+			}
+		});
+		let showMore2 = false;
+		const more2 = document.querySelector(".links .b-two");
+		const moreDis2 = document.querySelector(".links .l-two");
+		more2.addEventListener("click", function () {
+			showMore2 = !showMore2;
+			if(showMore2) {
+				moreDis2.style.display = "block";
+			} else {
+				moreDis2.style.display = "none";
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>“机”不可失——计算机技术展</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="index.css" />
+		<style type="text/css">
+		       * {
+		           cursor: url('picture/z1.png'), auto;
+		       }
+		</style>
+		<script src="js/cursor-effects.js" defer></script>
+	</head>
+	<body>
+		<!-- Header -->
+			<header id="header">
+				<a class="logo"><strong>网页设计大赛</strong> 参赛作品</a>
+				<nav>
+					<a href="#menu">菜单栏</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">主页</a></li>
+					<li class="father-list">
+						<div class="child-box b-one">
+							<div class="btn" style="cursor: default">名人轶事</div>
+							<img class="pho" src="picture/a8.png" alt="">
+						</div>
+						<ul class="child-list l-one" style="display: none">
+							<li><a href="b1.html" style="color: #fff;">冯诺依曼</a></li>
+							<li><a href="b2.html" style="color: #fff;">图灵</a></li>
+						</ul>
+					</li>
+					<li><a href="c1.html">前端之美</a></li>
+					<li class="father-list">
+						<div class="child-box b-two">
+							<div class="btn" style="cursor: default">软件介绍</div>
+							<img class="pho" src="picture/a8.png" alt="">
+						</div>
+						<ul class="child-list l-two" style="display: none">
+							<li><a href="d3.html" style="color: #fff;">QQ</a></li>
+							<li><a href="d2.html" style="color: #fff;">PS</a></li>
+							<li><a href="d1.html" style="color: #fff;">PR</a></li>
+						</ul>
+					</li>
+					<li><a href="e1.html">人工智能</a></li>
+					<li><a href="f1.html">云计算</a></li>
+					<li><a href="g1.html">网络安全</a></li>
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+		<div id="mydiv">
+			<section :id="mybanner">
+				<div class="inner">
+					<h1>“机”不可失——计算机技术展</h1>
+					<p class="title-word">各位旅客好，本次展览总共有六站，希望大家能玩的开心！</p>
+					<ul class="actions">
+						<li><a href="#one" class="button alt scrolly big">继续</a></li>
+					</ul>
+					<ul class="dots">
+						<li :class="num==0?'white':'none'" @click="one">1</li>
+						<li :class="num==1?'white':'none'" @click="two">2</li>
+						<li :class="num==2?'white':'none'" @click="three">3</li>
+						<li :class="num==3?'white':'none'" @click="four">4</li>
+						<li :class="num==4?'white':'none'" @click="five">5</li>
+						<li :class="num==5?'white':'none'" @click="six">6</li>
+					</ul>
+
+					<i id="left" class="fa" @click="toleft">  < </i>
+					<i id="right" class="fa" @click="toright">  > </i>
+				</div>
+			</section>
+		</div>
+
+
+		<!-- One -->
+			<article id="one" class="post style1">
+				<div class="image">
+					<img src="picture/a2.png" alt="" data-position="75% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="b1.html">名人轶事</a></h2>
+							<p class="info"><a href="#">第一站</a></p>
+						</header>
+						<p class="w">众所周知，计算机的出现为我们人类提供了巨大的便利，人们可以利用计算机进行学习，聊天，听音乐，看视频，玩游戏等等，现在让我们走进计算机的世界，对它进行深一步的了解。首先，在计算机的诞生过程中，图灵、冯诺依曼等人提供了巨大的贡献，他们也同样发生过一些有趣的故事，让我们一起了解一下。</p>
+						<ul class="actions">
+							<li><a href="b1.html" class="button alt">阅读更多</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#" class="prev disabled"><span class="icon fa-chevron-up"></span></a>
+						<a href="#two" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+
+		<!-- Two -->
+			<article id="two" class="post invert style1 alt">
+				<div class="image">
+					<img src="picture/a3.png" alt="" data-position="10% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="c1.html">前端之美</a></h2>
+							<p class="info"><a href="#">第二站</a></p>
+						</header>
+						<p>接下来，让我们走进计算机的前端部分。前端技术一般分为前端设计和前端开发，HTML、CSS、JavaScript这三个是前端开发中最基本也是最必须的三个技能。前端的开发中，在页面的布局时，HTML将元素进行定义，CSS对展示的元素进行定位，再通过JavaScript实现相应的效果和交互。</p>
+						<ul class="actions">
+							<li><a href="c1.html" class="button alt">阅读更多</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#one" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#three" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+
+		<!-- Three -->
+			<article id="three" class="post style2">
+				<div class="image">
+					<img src="picture/a4.png" alt="" data-position="80% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="d1.html">软件介绍</a></h2>
+							<p class="info"><a href="#">第三站</a></p>
+						</header>
+						<p class="w">这一站我们将介绍一些软件的功能。软件是用户与硬件之间的接口界面，用户主要是通过软件与计算机进行交流，软件是计算机系统设计的重要依据。为了方便用户，为了使计算机系统具有较高的总体效用，在设计计算机系统时，必须通盘考虑软件与硬件的结合，以及用户的要求和软件的要求。计算机为我们提供了很多实用方便的软件，微信，qq，ps，pr，浏览器等等，利用它们不仅可以与别人进行更好的交流沟通，更能制造出美丽的照片，好看的视频，但是你真的了解它们吗？</p>
+						<ul class="actions">
+							<li><a href="d1.html" class="button alt">阅读更多</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#two" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#four" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+
+		<!-- Four -->
+			<article id="four" class="post invert style2 alt">
+				<div class="image">
+					<img src="picture/a5.png" alt="" data-position="60% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="e1.html">人工智能</a></h2>
+							<p class="info"><a href="#">第四站</a></p>
+						</header>
+						<p>人工智能已经逐渐走进我们的生活，并应用于各个领域，它不仅给许多行业带来了巨大的经济效益，也为我们的生活带来了许多改变和便利。它包括无人驾驶汽车、人脸识别、机器翻译、声纹识别、智能客服机器人、智能音箱和图像搜索等等，是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新技术科学。接下来让我们具体了解一下。</p>
+						<ul class="actions">
+							<li><a href="e1.html" class="button alt">阅读更多</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#three" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#five" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+
+		<!-- Five -->
+			<article id="five" class="post style3">
+				<div class="image">
+					<img src="picture/a6.png" alt="" data-position="5% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="f1.html">云计算</a></h2>
+							<p class="info"><a href="#">第五站</a></p>
+						</header>
+						<p class="w">较为简单的云计算技术已经普遍服务于现如今的互联网服务中，最为常见的就是网络搜索引擎和网络邮箱。搜索引擎大家最为熟悉的莫过于谷歌和百度了，在任何时刻，只要用过移动终端就可以在搜索引擎上搜索任何自己想要的资源，通过云端共享了数据资源。而网络邮箱也是如此，在过去，寄写一封邮件是一件比较麻烦的事情，同时也是很慢的过程，而在云计算技术和网络技术的推动下，电子邮箱成为了社会生活中的一部分，只要在网络环境下，就可以实现实时的邮件的寄发。其实，云计算技术已经融入现今的社会生活。</p>
+						<ul class="actions">
+							<li><a href="f1.html" class="button alt">阅读更多</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#four" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#six" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+
+		<!-- Six -->
+			<article id="six" class="post invert style3 alt">
+				<div class="image">
+					<img src="picture/a7.png" alt="" data-position="80% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="g1.html">网络安全</a></h2>
+							<p class="info"><a href="#">第六站</a></p>
+						</header>
+						<p>最后一站我们将介绍一下网络安全这一内容。它是国家安全包括的一项基本内容，指计算机网络的安全，也指计算机通信网络的安全。可以把网络安全定义为：一个网络系统不受任何威胁与侵害，能正常地实现资源共享功能。要使网络能正常地实现资源共享功能，首先要保证网络的硬件、软件能正常运行，然后要保证数据信息交换的安全。让我们具体了解一下吧！</p>
+						<ul class="actions">
+							<li><a href="g1.html" class="button alt">阅读更多</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#five" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+
+		<!-- Footer -->
+			<footer id="footer">
+
+				<div class="copyright">
+					<a>网页设计大赛制作人员： </a>  徐一鸣，秦宇阳，赵俊超，钱苏杭，刘嘉
+				</div>
+			</footer>
+		<img class="top" src="http://document.youkeda.com/P3-1-HTML-CSS/1.8/top.png" alt=""/>
+		
+		<!-- Scripts -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/skel.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+			<script type="text/javascript" src="js/myvue.js"></script>
+	</body>
+	<script type="text/javascript">
+		let showMore1 = false;
+		const more1 = document.querySelector(".links .b-one");
+		const moreDis1 = document.querySelector(".links .l-one");
+		more1.addEventListener("click", function () {
+			showMore1= !showMore1;
+			if(showMore1) {
+				moreDis1.style.display = "block";
+			} else {
+				moreDis1.style.display = "none";
+			}
+		});
+		let showMore2 = false;
+		const more2 = document.querySelector(".links .b-two");
+		const moreDis2 = document.querySelector(".links .l-two");
+		more2.addEventListener("click", function () {
+			showMore2 = !showMore2;
+			if(showMore2) {
+				moreDis2.style.display = "block";
+			} else {
+				moreDis2.style.display = "none";
+			}
+		});
+	</script>
+	<script>
+		const topDom = document.querySelector('.top');
+		topDom.addEventListener('click', function() {
+			document.body.scrollTop = document.documentElement.scrollTop = 0;
+		});
+	</script>
+</html>

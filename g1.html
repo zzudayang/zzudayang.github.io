@@ -1,0 +1,559 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>ctf教程</title>
+    <link rel="stylesheet" href="g1.css">
+    <!-- 鼠标点击特效 -->
+    <style type="text/css">
+        * {
+            cursor: url('picture/z3.png'), auto;
+        }
+    </style>
+    <script src="js/cursor-effects.js" defer></script>
+
+    <style>
+
+        .small_img,.big_img {
+            cursor: pointer;
+
+        }
+        .small_img{
+            height: 300px;
+            width: 500px;
+            margin: 20px auto;
+            box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+            border-radius:15px ;
+        }
+        .black_overlay{
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index:1001;
+            -moz-opacity: 0.8;
+            opacity:.80;
+            filter: alpha(opacity=80);
+        }
+        .big_img1{
+            display: none;
+            position: absolute;
+            width: 1000px;
+            height: 1500px;
+            left:20%;
+            top: 18%;
+            margin: -60px 0px 0px -60px;
+            z-index:1002;
+            overflow: auto;
+        }
+        .big_img2{
+            display: none;
+            position: absolute;
+            width: 1000px;
+            height: 1000px;
+            left:20%;
+            top: 25%;
+            margin: -60px 0px 0px -60px;
+            z-index:1002;
+            overflow: auto;
+        }
+        .big_img3{
+            display: none;
+            position: absolute;
+            width: 1000px;
+            height: 1200px;
+            left:20%;
+            top: 29%;
+            margin: -60px 0px 0px -60px;
+            z-index:1002;
+            overflow: auto;
+        }
+        .big_img4{
+            display: none;
+            position: absolute;
+            width: 1000px;
+            height: 1200px;
+            left:20%;
+            top: 35%;
+            margin: -60px 0px 0px -60px;
+            z-index:1002;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+
+<body>
+<!-- Header -->
+<header id="header">
+    <a class="logo"><strong>计算机技术展</strong></a>
+    <nav>
+        <a href="#menu">菜单栏</a>
+    </nav>
+</header>
+
+<!-- Nav -->
+<nav id="menu">
+    <ul class="links">
+        <li><a href="index.html">主页</a></li>
+        <li class="father-list">
+            <div class="child-box b-one">
+                <div class="btn" style="cursor: default">名人轶事</div>
+                <img class="pho" src="picture/a8.png" alt="">
+            </div>
+            <ul class="child-list l-one" style="display: none">
+                <li><a href="b1.html" style="color: #fff;">冯诺依曼</a></li>
+                <li><a href="b2.html" style="color: #fff;">图灵</a></li>
+            </ul>
+        </li>
+        <li><a href="c1.html">前端之美</a></li>
+        <li class="father-list">
+            <div class="child-box b-two">
+                <div class="btn" style="cursor: default">软件介绍</div>
+                <img class="pho" src="picture/a8.png" alt="">
+            </div>
+            <ul class="child-list l-two" style="display: none">
+                <li><a href="d3.html" style="color: #fff;">QQ</a></li>
+                <li><a href="d2.html" style="color: #fff;">PS</a></li>
+                <li><a href="d1.html" style="color: #fff;">PR</a></li>
+            </ul>
+        </li>
+        <li><a href="e1.html">人工智能</a></li>
+        <li><a href="f1.html">云计算</a></li>
+        <li><a href="g1.html">网络安全</a></li>
+    </ul>
+</nav>
+
+
+
+    <div data-target="readme-toc.content" class="Box mt-3 position-relative">
+
+        <div
+                class="Box-header js-blob-header blob-header js-sticky js-position-sticky top-0 p-2 d-flex flex-shrink-0 flex-md-row flex-items-center"
+                style="position: sticky; z-index: 1;"
+        >
+
+            <details
+                    data-target="readme-toc.trigger"
+                    data-menu-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;trigger&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}"
+                    data-menu-hydro-click-hmac="47c5b2f665a5b68c96f02369c7562d09dd53ca6be22c5111959f6adc5a132b31"
+                    class="dropdown details-reset details-overlay"
+            >
+                <summary
+                        class="btn btn-octicon m-0 mr-2 p-2"
+                        aria-haspopup="true"
+                        aria-label="Table of Contents">
+                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                    </svg>
+                </summary>
+
+
+                <details-menu class="SelectMenu" role="menu">
+                    <div class="SelectMenu-modal rounded-3 mt-1" style="max-height:340px;">
+
+                        <div class="SelectMenu-filter">
+                            <input
+                                    class="SelectMenu-input form-control js-filterable-field"
+                                    id="toc-filter-field"
+                                    type="text"
+                                    autocomplete="off"
+                                    spellcheck="false"
+                                    autofocus
+                                    placeholder="Filter headings"
+                                    aria-label="Filter headings">
+                        </div>
+
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" data-filterable-for="toc-filter-field" data-filterable-type="substring">
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 text-emphasized" style="-webkit-box-orient: vertical; padding-left: 12px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#11-ctf-简介">1.1 CTF 简介</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 24px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#概述">概述</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 24px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#赛事介绍">赛事介绍</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 24px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#题目类别">题目类别</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 24px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#高质量的比赛">高质量的比赛</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 24px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#竞赛小贴士">竞赛小贴士</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 24px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#线下赛-awd-模式">线下赛 AWD 模式</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 36px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#怎样拿到-flag">怎样拿到 flag</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 36px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#web-题目类型">Web 题目类型</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 36px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#bin-题目类型">Bin 题目类型</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 36px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#技巧">技巧</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 24px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#搭建-ctf-比赛平台">搭建 CTF 比赛平台</a>
+                            <a role="menuitem" class="filter-item SelectMenu-item ws-normal wb-break-word line-clamp-2 py-1 " style="-webkit-box-orient: vertical; padding-left: 24px;" data-action="click:readme-toc#blur" data-targets="readme-toc.entries" data-hydro-click="{&quot;event_type&quot;:&quot;repository_toc_menu.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;entry&quot;,&quot;repository_id&quot;:97291220,&quot;originating_url&quot;:&quot;https://github.com/firmianay/CTF-All-In-One/blob/master/doc/1.1_ctf.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="52c33b6e4416ab02989c65540c70b8bbd5037d90088e249e65dbf46f6f305295" href="#参考">参考</a>
+                        </div>
+                    </div>
+                </details-menu>
+            </details>
+
+
+<div id="readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 gist-border-0">
+    <article class="markdown-body entry-content container-lg" itemprop="text">
+        <div id="flex">
+            <img src="picture/g-six-16.jpg" id="headimg" >
+            <p id="head">网络安全 CTF</p>
+        </div>
+        <div class="box1">
+            <h1 dir="auto">
+        <a id="user-content-11-ctf-简介" class="anchor" aria-hidden="true" href="#11-ctf-简介"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>1.1 CTF 简介</h1>
+        <ul dir="auto">
+            <div class="box3">
+            <li style="font-size: 30px;list-style-type: none;margin-bottom: 10px">导航</li>
+            </div>
+                <li><a  style="text-decoration: none;margin-left: 20px" href="#p1">概述</a></li>
+            <li><a   style="text-decoration: none;margin-left: 20px" href="#p2">赛事介绍</a></li>
+            <li><a  style="text-decoration: none;margin-left: 20px" href="#p3">题目类别</a></li>
+            <li><a  style="text-decoration: none;margin-left: 20px" href="#p4">高质量的比赛</a></li>
+            <li><a  style="text-decoration: none;margin-left: 20px" href="#p5">竞赛小贴士</a></li>
+            <li><a  style="text-decoration: none;margin-left: 20px" href="#p6">线下赛 AWD 模式</a></li>
+            <li><a  style="text-decoration: none;margin-left: 20px" href="#p7">搭建 CTF 比赛平台</a></li>
+        </ul>
+        </div>
+        <h2 dir="auto"><a href="#" name="p1"></a>概述</h2>
+   <div class="images1">
+       <img src="picture/ctf1.png" alt="" class="img1" style="margin-right: 80px">
+       <img src="picture/ctf2.jpg" alt="" class="img1">
+   </div>
+        <p dir="auto"style="text-indent: 2em" style="line-height: 40px">  CTF（Capture The Flag）中文一般译作夺旗赛，在网络安全领域中指的是网络安全技术人员之间进行技术竞技的一种比赛形式。CTF起源于1996年DEFCON全球黑客大会，以代替之前黑客们通过互相发起真实攻击进行技术比拼的方式。发展至今，已经成为全球范围网络安全圈流行的竞赛形式，2013年全球举办了超过五十场国际性CTF赛事。而DEFCON作为CTF赛制的发源地，DEFCON CTF也成为了目前全球最高技术水平和影响力的CTF竞赛，类似于CTF赛场中的“世界杯”。</p>
+        <p dir="auto"style="text-indent: 2em"  style="line-height: 40px">CTF 为团队赛，通常以三人为限，要想在比赛中取得胜利，就要求团队中每个人在各种类别的题目中至少精通一类，三人优势互补，取得团队的胜利。同时，准备和参与 CTF 比赛是一种有效将计算机科学的离散面、聚焦于计算机安全领域的方法。</p>
+        <h2 dir="auto"><a href="#" name="p2"></a>赛事介绍</h2>
+        <div class="images1">
+            <img src="picture/g-six-3.jpg" alt="" class="img1" style="margin-right: 80px">
+            <img src="picture/g-six-4.JPG" alt="" class="img1">
+        </div>
+        <p dir="auto">CTF是一种流行的信息安全竞赛形式，其英文名可直译为“夺得Flag”，也可意译为“夺旗赛”。其大致流程是，参赛团队之间通过进行攻防对抗、程序分析等形式，率先从主办方给出的比赛环境中得到一串具有一定格式的字符串或其他内容，并将其提交给主办方，从而夺得分数。为了方便称呼，我们把这样的内容称之为“Flag”。</p>
+        <p dir="auto">CTF竞赛模式具体分为以下三类：</p>
+        <ul dir="auto">
+            <li>解题模式（Jeopardy）
+                <ul dir="auto">
+                    <li>在解题模式CTF赛制中，参赛队伍可以通过互联网或者现场网络参与，这种模式的CTF竞赛与ACM编程竞赛、信息学奥赛比较类似，以解决网络安全技术挑战题目的分值和时间来排名，通常用于在线选拔赛。题目主要包含逆向、漏洞挖掘与利用、Web渗透、密码、取证、隐写、安全编程等类别。</li>
+                </ul>
+            </li>
+            <li>攻防模式（Attack-Defense）
+                <ul dir="auto">
+                    <li>在攻防模式CTF赛制中，参赛队伍在网络空间互相进行攻击和防守，挖掘网络服务漏洞并攻击对手服务来得分，修补自身服务漏洞进行防御来避免丢分。攻防模式CTF赛制可以实时通过得分反映出比赛情况，最终也以得分直接分出胜负，是一种竞争激烈，具有很强观赏性和高度透明性的网络安全赛制。在这种赛制中，不仅仅是比参赛队员的智力和技术，也比体力（因为比赛一般都会持续48小时及以上），同时也比团队之间的分工配合与合作。</li>
+                </ul>
+            </li>
+            <li>混合模式（Mix）
+                <ul dir="auto">
+                    <li>结合了解题模式与攻防模式的CTF赛制，比如参赛队伍通过解题可以获取一些初始分数，然后通过攻防对抗进行得分增减的零和游戏，最终以得分高低分出胜负。采用混合模式CTF赛制的典型代表如iCTF国际CTF竞赛。</li>
+                </ul>
+            </li>
+        </ul>
+        <h2 dir="auto"><a href="#" name="p3"></a>题目类别</h2>
+        <ul dir="auto">
+
+            <li>Reverse<br/>
+
+                <img class="small_img" src ="picture/g-six-5.jpg" onclick="document.getElementById('light1').style.display ='block';document.getElementById('fade1').style.display='block'"/>
+
+                <img id="light1" class="big_img1" src ="picture/g-six-5.jpg" onclick = "document.getElementById('light1').style.display ='none' ;document.getElementById('fade1').style.display='none'"/>
+
+                <div id="fade1" class="black_overlay"></div>
+                <p style="color: blueviolet">提示：点击上方图片放大查看</p>
+
+
+                <ul dir="auto">
+                    <li>题目涉及到软件逆向、破解技术等，要求有较强的反汇编、反编译功底。主要考查参赛选手的逆向分析能力。</li>
+                    <li>所需知识：汇编语言、加密与解密、常见反编译工具</li>
+                </ul>
+            </li>
+            <li>Pwn<br/>
+
+                <img class="small_img" src ="picture/g-six-6.jpg" onclick="document.getElementById('light2').style.display ='block';document.getElementById('fade2').style.display='block'"/>
+
+                <img id="light2" class="big_img2" src ="picture/g-six-6.jpg" onclick = "document.getElementById('light2').style.display ='none' ;document.getElementById('fade2').style.display='none'"/>
+
+                <div id="fade2" class="black_overlay"></div>
+                <p style="color: blueviolet">提示：点击上方图片放大查看</p>
+                <ul dir="auto">
+                    <li>Pwn 在黑客俚语中代表着攻破，获取权限，在 CTF 比赛中它代表着溢出类的题目，其中常见类型溢出漏洞有整数溢出、栈溢出、堆溢出等。主要考查参赛选手对漏洞的利用能力。</li>
+                    <li>所需知识：C，OD+IDA，数据结构，操作系统</li>
+                </ul>
+            </li>
+            <li>Web
+                <ul dir="auto">
+                    <li>Web 是 CTF 的主要题型，题目涉及到许多常见的 Web 漏洞，如 XSS、文件包含、代码执行、上传漏洞、SQL 注入等。也有一些简单的关于网络基础知识的考察，如返回包、TCP/IP、数据包内容和构造。可以说题目环境比较接近真实环境。</li>
+                    <li>所需知识：PHP、Python、TCP/IP、SQL</li>
+                </ul>
+            </li>
+            <a href="https://xz.aliyun.com/t/7169" target="_blank" style="
+            background-color: #fff2cc;
+            padding: 20px;
+            box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+            border-radius:15px ;
+                    text-decoration: none">
+                点击学习SQL注入</a>
+
+            <a href="https://www.jianshu.com/p/5ebba0482980" target="_blank" style="
+            background-color: darkseagreen;
+            padding: 20px;
+            box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+            border-radius:15px ;
+            text-decoration: none">
+                点击学习文件上传</a>
+
+            <a href="https://www.cnblogs.com/linfangnan/p/13546089.html" target="_blank" style="
+            background-color: aquamarine;
+            padding: 20px;
+            box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+            border-radius:15px ;
+            text-decoration: none">
+                点击了解Burpsuit使用</a>
+            <li>Crypto<br/>
+
+
+                <img class="small_img" src ="picture/g-six-8.jpg" onclick="document.getElementById('light3').style.display ='block';document.getElementById('fade3').style.display='block'"/>
+
+                <img id="light3" class="big_img3" src ="picture/g-six-8.jpg" onclick = "document.getElementById('light3').style.display ='none' ;document.getElementById('fade3').style.display='none'"/>
+
+                <div id="fade3" class="black_overlay"></div>
+                <p style="color: blueviolet">提示：点击上方图片放大查看</p>
+                <ul dir="auto">
+                    <li>题目考察各种加解密技术，包括古典加密技术、现代加密技术甚至出题者自创加密技术，以及一些常见编码解码，主要考查参赛选手密码学相关知识点。通常也会和其他题目相结合。</li>
+                    <li>所需知识：矩阵、数论、密码学</li>
+                </ul>
+            </li>
+
+            <a href="koczkatamas/tools.html" target="_blank" style="
+            background-color: antiquewhite;
+            color: black;
+            padding: 20px;
+            box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.2);
+            border-radius:15px ;
+            text-decoration: none">
+                点击获取解码工具</a>
+            <li>Misc<br/>
+
+                <img class="small_img" src ="picture/g-six-9.jpg" onclick="document.getElementById('light4').style.display ='block';document.getElementById('fade4').style.display='block'"/>
+
+                <img id="light4" class="big_img4" src ="picture/g-six-9.jpg" onclick = "document.getElementById('light4').style.display ='none' ;document.getElementById('fade4').style.display='none'"/>
+
+                <div id="fade4" class="black_overlay"></div>
+                <p style="color: blueviolet">提示：点击上方图片放大查看</p>
+                <ul dir="auto">
+                    <li>Misc 即安全杂项，题目涉及隐写术、流量分析、电子取证、人肉搜索、数据分析、大数据统计等，覆盖面比较广，主要考查参赛选手的各种基础综合知识。</li>
+                    <li>所需知识：常见隐写术工具、Wireshark 等流量审查工具、编码知识</li>
+                </ul>
+            </li>
+            <li>Mobile
+                <ul dir="auto">
+                    <li>主要分为 Android 和 iOS 两个平台，以 Android 逆向为主，破解 APK 并提交正确答案。</li>
+                    <li>所需知识：Java，Android 开发，常见工具</li>
+                </ul>
+            </li>
+        </ul>
+        <h2 dir="auto"><a href="#" name="p4"> </a>高质量的比赛</h2>
+        <p dir="auto">详见:<a href="http://www.ctftime.org" rel="nofollow">ctftime.org</a></p>
+        <ul dir="auto">
+            <li>练习平台推荐
+                <ul dir="auto">
+                    <li>攻防世界</li>
+                    <a href="https://adworld.xctf.org.cn/">
+                        <img src="picture/g-six-10.jpg" alt="" class="img0">
+                    </a>
+                    <p style="color: blueviolet">提示：点击上方图片跳转</p>
+                    <li>BUUCTF</li>
+                    <a href="https://buuoj.cn/">
+                        <img src="picture/g-six-11.jpg" alt="" class="img0">
+                    </a>
+                    <p style="color: blueviolet">提示：点击上方图片跳转</p>
+                </ul>
+            </li>
+            <li>Pwn2Own
+                <ul dir="auto">
+                    <li>世界最难的黑客挑战赛</li>
+                    <li>针对主流浏览器的远程攻击</li>
+                    <li>要求沙箱逃逸</li>
+                </ul>
+            </li>
+            <li>CyberGrandChallenge
+                <ul dir="auto">
+                    <li>机器人的CTF攻防比赛</li>
+                    <li>自动化漏洞挖掘、漏洞利用、程序分析、程序补丁</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="box2">
+        <h2 dir="auto"><a href="#" name="p5"></a>竞赛小贴士</h2>
+        <img src="picture/g-six-12.jpg" alt="" class="img0">
+        <ul dir="auto">
+            <li>寻找团队
+                <ul dir="auto">
+                    <li>彼此激励24小时以上的连续作战</li>
+                    <li>彼此分享交流技术与心得是最快的成长途径</li>
+                    <li>强有力的团队可以让你安心专注于某一领域</li>
+                    <li>在黑暗中前行不会感到孤独</li>
+                </ul>
+            </li>
+            <li>有效训练
+                <ul dir="auto">
+                    <li>坚持不懈地训练是成为强者的必经途径
+                        <ul dir="auto">
+                            <li>wargame</li>
+                            <li>经典赛题配合writeup加以总结</li>
+                            <li><a href="https://github.com/ctfs">ctfs</a></li>
+                            <li>以赛代练</li>
+                        </ul>
+                    </li>
+                    <li>总结与分享</li>
+                </ul>
+            </li>
+            <li>wargame推荐
+                <ul dir="auto">
+                    <li>漏洞挖掘与利用
+                        <ul dir="auto">
+                            <li>pwnable.kr</li>
+                            <li><a href="https://exploit-exercises.com/" rel="nofollow">exploit-exercises</a></li>
+                            <li><a href="https://io.netgarage.org/" rel="nofollow">netgarage</a></li>
+                        </ul>
+                    </li>
+                    <li>逆向工程与软件破解
+                        <ul dir="auto">
+                            <li><a href="http://reversing.kr/" rel="nofollow">reversing.kr</a></li>
+                        </ul>
+                    </li>
+                    <li>web渗透
+                        <ul dir="auto">
+                            <li><a href="http://webhacking.kr/" rel="nofollow">webhacking.kr</a></li>
+                            <li><a href="https://xss-game.appspot.com/" rel="nofollow">xss-game</a></li>
+                        </ul>
+                    </li>
+                    <li>综合类
+                        <ul dir="auto">
+                            <li><a href="http://overthewire.org/wargames/" rel="nofollow">wargames</a></li>
+                            <li><a href="https://w3challs.com/" rel="nofollow">w3challs</a></li>
+                            <li><a href="https://chall.stypr.com/?chall" rel="nofollow">Stereotyped Challenges</a></li>
+                            <li><a href="https://pentesterlab.com/" rel="nofollow">pentesterlab</a></li>
+                            <li><a href="https://id0-rsa.pub/" rel="nofollow">id0-rsa.pub</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+        <h2 dir="auto"><a href="#" name="p6"> </a>线下赛 AWD 模式</h2>
+        <div class="images1">
+            <img src="picture/g-six-18.JPG" alt="" class="img1" style="margin-right: 80px">
+            <img src="picture/g-six-19.JPG" alt="" class="img1">
+        </div>
+        <p dir="auto">Attack With Defence，简而言之就是你既是一个 hacker，又是一个 manager。</p>
+        <p dir="auto">比赛形式：一般就是一个 ssh 对应一个服务，可能是 web 也可能是 pwn，然后 flag 五分钟一轮，各队一般都有自己的初始分数，flag 被拿会被拿走 flag 的队伍均分，主办方会对每个队伍的服务进行 check，check 不过就扣分，扣除的分值由服务 check 正常的队伍均分。</p>
+        <h3 dir="auto"><a id="user-content-怎样拿到-flag" class="anchor" aria-hidden="true" href="#怎样拿到-flag"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>怎样拿到 flag</h3>
+        <ol dir="auto">
+            <li>web 主要是向目标服务器发送 http 请求，返回 flag</li>
+            <li>bin 主要是通过 exploit 脚本读取 <code>/home/username</code> 下某个文件夹下的 flag 文件</li>
+        </ol>
+        <h3 dir="auto"><a id="user-content-web-题目类型" class="anchor" aria-hidden="true" href="#web-题目类型"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Web 题目类型</h3>
+        <ol dir="auto">
+            <li>出题人自己写的 CMS 或者魔改后的 CMS(注意最新漏洞、1day 漏洞等)</li>
+            <li>常见(比如 <code>Wordpress</code> 博客啊、<code>Discuz!</code> 论坛啊)或者不常见 CMS 等</li>
+            <li>框架型漏洞(CI等)</li>
+        </ol>
+        <ul dir="auto">
+            <li><a href="http://www.mamicode.com/info-detail-1590551.html" rel="nofollow">如何在 CTF 中当搅屎棍</a></li>
+            <li><a href="http://bobao.360.cn/ctf/detail/169.html" rel="nofollow">AWD 模式生存技巧</a></li>
+            <li>能力：
+                <ul dir="auto">
+                    <li>漏洞反应能力</li>
+                    <li>快速编写脚本</li>
+                    <li>web代码审计</li>
+                </ul>
+            </li>
+            <li>心态放好，因为 web 比较容易抓取流量，所以即使我们被打，我们也可以及时通过分析流量去查看别的队伍的 payload，从而进行反打。</li>
+            <li>脚本准备：一句话，文件包含，不死马、禁止文件上传等</li>
+            <li><strong>警惕 web 弱口令，用最快的速度去补。</strong></li>
+        </ul>
+        <h3 dir="auto"><a id="user-content-bin-题目类型" class="anchor" aria-hidden="true" href="#bin-题目类型"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Bin 题目类型</h3>
+        <p dir="auto">大部分是 PWN，题目类型包括栈、堆、格式化字符串等等。</p>
+        <ul dir="auto">
+            <li>能力：
+                <ul dir="auto">
+                    <li>迅速找到二进制文件的漏洞，迅速打 patch 的能力</li>
+                    <li>全场打 pwn 的 exp 脚本编写</li>
+                    <li>熟悉服务器运维</li>
+                    <li>尽快摸清楚比赛的 check 机制</li>
+                    <li>如果二进制分析遇到障碍难以进行，那就去帮帮 web 选手运维</li>
+                </ul>
+            </li>
+            <li>看看现场环境是否可以提权，这样可以方便我们搞操作（如魔改 libc 等等）</li>
+        </ul>
+        <h3 dir="auto"><a id="user-content-技巧" class="anchor" aria-hidden="true" href="#技巧"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>技巧</h3>
+        <img src="picture/g-six-13.jpg" alt="" class="img0">
+        <ul dir="auto">
+            <li>如果自己拿到 FB， 先用 NPC 服务器或者自己服务器测试，格外小心自己的 payload 不要被别的队伍抓取到, 写打全场的 exp 时，一定要加入混淆流量。</li>
+            <li>提前准备好 PHP 一句话木马等等脚本。</li>
+            <li>小心其他队伍恶意攻击使我们队伍机器的服务不能正常运行，因此一定要备份服务器的配置。</li>
+            <li>尽可能在不搞崩服务和绕过 check 的情况下，上 WAF，注意分析别人打过来的流量，如果没有混淆，可以大大加快我们的漏洞分析速度。</li>
+            <li>工具准备: 中国菜刀、 Nmap、Xshell、 合适的扫描器等。</li>
+            <li>心态不要崩。</li>
+            <li>不要忽视 Github 等平台，可能会有写好的 exp 可以用。</li>
+            <li>将 flag 的提交自动化。</li>
+        </ul>
+        <h2 dir="auto"><a href="#" name="p7"> </a>搭建 CTF 比赛平台</h2>
+        <ul dir="auto">
+            <li><a href="https://github.com/facebook/fbctf">FBCTF</a> - The Facebook CTF is a platform to host Jeopardy and “King of the Hill” style Capture the Flag competitions.</li>
+            <li><a href="https://github.com/CTFd/CTFd">CTFd</a> - CTFd is a Capture The Flag in a can. It's easy to customize with plugins and themes and has everything you need to run a jeopardy style CTF.</li>
+            <li><a href="https://github.com/cliffe/SecGen">SecGen</a> - SecGen creates vulnerable virtual machines so students can learn security penetration testing techniques.</li>
+        </ul>
+        <h2 dir="auto"><a id="user-content-参考" class="anchor" aria-hidden="true" href="#参考"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>参考</h2>
+        <ul dir="auto">
+            <li><a href="https://baike.baidu.com/item/ctf/9548546#viewPageContent" rel="nofollow">ctf（夺旗赛）</a></li>
+        </ul>
+        <img
+                class="top"
+                src="http://document.youkeda.com/P3-1-HTML-CSS/1.8/top.png"
+        />
+        <input type="image" src="https://i03piccdn.sogoucdn.com/b43f080cda4baa39" class="img3" style="margin-right: 80px"/>
+        <input type="image" src="https://p2.itc.cn/q_70/images03/20211014/8511d3bc5a5741829b3866430e80a602.gif" class="img3"/><br/>
+    </article>
+</div>
+
+</div>
+    </div>
+<!-- Footer -->
+<footer id="footer">
+
+    <div class="copyright">
+        <a>网页设计大赛制作人员： </a>  徐一鸣，秦宇阳，钱苏杭，赵俊超，刘嘉
+    </div>
+</footer>
+<script>
+    const topDom = document.querySelector('.top');
+    topDom.addEventListener('click', function() {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    });
+</script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.scrolly.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/util.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/catalog.js"></script>
+</body>
+<script type="text/javascript">
+    let showMore1 = false;
+    const more1 = document.querySelector(".links .b-one");
+    const moreDis1 = document.querySelector(".links .l-one");
+    more1.addEventListener("click", function () {
+        showMore1= !showMore1;
+        if(showMore1) {
+            moreDis1.style.display = "block";
+        } else {
+            moreDis1.style.display = "none";
+        }
+    });
+    let showMore2 = false;
+    const more2 = document.querySelector(".links .b-two");
+    const moreDis2 = document.querySelector(".links .l-two");
+    more2.addEventListener("click", function () {
+        showMore2 = !showMore2;
+        if(showMore2) {
+            moreDis2.style.display = "block";
+        } else {
+            moreDis2.style.display = "none";
+        }
+    });
+</script>
+</html>
